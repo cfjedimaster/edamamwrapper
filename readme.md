@@ -41,13 +41,7 @@ The [Recipe Search](https://developer.edamam.com/edamam-recipe-api) functionalit
 
 In this example, we load in the wrapper library and then do a search for recipes that include rice. A `max_calories` argument is passed to return healthier recipes. 
 
-The result of the `recipeSearch` call is an object with the following properties:
-
-* `count`: The total number of results.
-* `results`: An array of recipe results. See the [API docs](https://developer.edamam.com/edamam-docs-recipe-api) for what is included in each recipe result.
-* `from`: Zero-based index representing where your results begin.
-* `to`: Represents the requested upper range of your results (and where you could begin your next search if implementing paging). 
-* `more`: A boolean representing if more results are available.
+### Parameters
 
 The `recipeSearch` method accepts one argument, a simple JavaScript object with the following keys:
 
@@ -62,3 +56,12 @@ The `recipeSearch` method accepts one argument, a simple JavaScript object with 
 * `min_calories` and `max_calories`: Values representing the minimum and maximum desired calories.
 * `min_time` and `max_time`: Values representing the minimum and maximum desired cooking time in minutes.
 * `excluded`: An array of ingredients that should not be present in the results. 
+
+### API Result 
+The result of the `recipeSearch` call is an object with the following properties:
+
+* `count`: The total number of results.
+* `results`: An array of recipe results. See the [API docs](https://developer.edamam.com/edamam-docs-recipe-api) for what is included in each recipe result.
+* `from`: Zero-based index representing where your results begin.
+* `to`: Represents the requested upper range of your results (and where you could begin your next search if implementing paging). 
+* `more`: A boolean representing if more results are available.
