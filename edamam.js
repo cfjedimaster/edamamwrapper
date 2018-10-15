@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 
-function search(args) {
+function recipeSearch(args) {
 
 	return new Promise((resolve, reject) => {
 
@@ -22,7 +22,7 @@ function search(args) {
 
 		// Support either a max (i want 99 results!) or to (im passing start and go to TO)
 		if(args.max) {
-			url += `&to=${args.start+args.max-1}`;
+			url += `&to=${args.start+args.max}`;
 		} else if(args.to) {
 			url += `&to=${args.to}`;
 		}
@@ -54,8 +54,6 @@ function search(args) {
 			args.excluded.forEach(i => url += '&excluded='+encodeURIComponent(i));
 		}
 
-		console.log('url='+url);
-
 		axios.get(url)
 		.then(res => {
 
@@ -78,4 +76,6 @@ function search(args) {
 
 }
 
-module.exports = search;
+module.exports = {
+	recipeSearch
+};
